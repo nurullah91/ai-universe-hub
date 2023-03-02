@@ -30,7 +30,7 @@ const displayData = aiItems => {
                     <span>${aiItem.published_in}</span>
                     </div>
                     <div>
-                        <i class="fa-solid fa-arrow-right-long"></i>
+                       <button class="btn btn-outline-danger"> <i class="fa-solid fa-arrow-right-long"></i></button>
                     </div>
                 </div>
             </div>
