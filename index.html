@@ -14,7 +14,7 @@
 <body>
     <header class="text-center mt-3">
         <h1>Ai Universe Hub</h1>
-        <button class="btn btn-danger fw-bold mt-3">Sort by Date</button>
+        <button id="short-by-date-btn" class="btn btn-danger fw-bold mt-3 d-none">Sort by Date</button>
     </header>
 
     <main>
@@ -39,8 +39,8 @@
     <!-- modal section  -->
 
     <!-- Modal -->
-    <div class="modal fade" id="ai-description" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="ai-descriptionLabel" aria-hidden="true">
+    <div class="modal fade" id="ai-description" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+ 
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
@@ -49,8 +49,8 @@
                 <div class="modal-body">
                     <div class="row row-cols-1 row-cols-md-2 g-4">
                         <div class="col">
-                            <div class="card">
-                                <img src="..." class="card-img-top" alt="...">
+                            <div class="card p-3">
+                              <h5 id="modal-first-card-title"></h5>
                                 <div class="card-body">
                                     <h5 class="card-title">Card title</h5>
                                     <p class="card-text">This is a longer card with supporting text below as a natural
@@ -59,8 +59,8 @@
                             </div>
                         </div>
                         <div class="col">
-                            <div class="card">
-                                <img src="..." class="card-img-top" alt="...">
+                            <div id="modal-second-card" class="card">
+                                <!-- <img src="..." class="card-img-top" alt="..."> -->
                                 <div class="card-body">
                                     <h5 class="card-title">Card title</h5>
                                     <p class="card-text">This is a longer card with supporting text below as a natural
