@@ -109,6 +109,25 @@ const loadAiDetails = async id => {
 }
 
 const displayAiDetails = details => {
+
+    // modal price plan;
+    const modalPriceBasic = document.getElementById('modal-price-basic')
+    const modalPricePro = document.getElementById('modal-price-pro')
+    const modalPriceEnterprise = document.getElementById('modal-price-enterprise')
+
+
+    details.pricing ? modalPriceBasic.innerHTML = `<span>${details.pricing[0].price}</span><br><span>${details.pricing[0].plan}</span>`: modalPriceBasic.innerHTML = `<span>Free of cost/Basic</span>`;
+
+    details.pricing ? modalPricePro.innerHTML = `<span>${details.pricing[1].price}</span><br><span>${details.pricing[1].plan}</span>`: modalPricePro.innerHTML = `<span>Free of cost/Pro</span>`;
+
+     details.pricing ? modalPriceEnterprise.innerHTML = `<span>${details.pricing[2].price}</span><br><span>${details.pricing[2].plan}</span>` : modalPriceEnterprise.innerHTML = `<span>Free of cost/Enterprise</span>`;
+
+
+
+
+
+
+
     // modal features 
     const modalCardFeature = document.getElementById('modal-card-feature');
     modalCardFeature.innerHTML = `
@@ -141,6 +160,8 @@ details.integrations ? details.integrations.forEach(integration => {
 
 
     }):integrationOl.innerText = "No data Found";
+
+
 
 
     // modal dynamic texts and images;
