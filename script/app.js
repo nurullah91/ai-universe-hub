@@ -40,6 +40,12 @@ const displayData = aiItems => {
         aiContainer.appendChild(aiDiv);
 
     });
+    // stop loading spinner ;
+    const loadingSpinner = document.getElementById('spinner');
+    loadingSpinner.classList.add('d-none');
+    // view see more button;
+    const seeMoreBtn = document.getElementById('see-more-btn');
+    seeMoreBtn.classList.remove('d-none');
 }
 
 
