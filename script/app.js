@@ -162,9 +162,7 @@ details.integrations ? details.integrations.forEach(integration => {
     }):integrationOl.innerText = "No data Found";
 
 
-
-
-    // modal dynamic texts and images;
+    // modal first card dynamic texts and images;
     const modalFirstCardTitle = document.getElementById('modal-first-card-title');
     modalFirstCardTitle.innerText = `${details.description}`;
 
@@ -172,6 +170,7 @@ details.integrations ? details.integrations.forEach(integration => {
     const secondCardContainer = document.getElementById('modal-second-card');
     secondCardContainer.innerHTML = `
     <img src="${details.image_link[0] ? details.image_link[0] : details.image_link[1]}" class="card-img-top" alt="...">
+    <span class="accuracyBtn">${details.accuracy ? details.accuracy.score * 100 +"%" + " " + "accuracy" :"" } </span> 
     <h5>${details.input_output_examples[0] ? details.input_output_examples[0].input : "Can you give any example?"} </h5>
     <p>${details.input_output_examples[0] ? details.input_output_examples[0].output : "No! Not Yet! Take a break!!!"} </p>
     `;
