@@ -7,8 +7,8 @@ const loadData = async () => {
 }
 const displayData = aiItems => {
     const aiContainer = document.getElementById('ai-container');
+       
     aiItems = aiItems.slice(0, 6);
-
 
     aiItems.forEach(aiItem => {
         const aiDiv = document.createElement('div');
@@ -30,7 +30,7 @@ const displayData = aiItems => {
                     <span>${aiItem.published_in}</span>
                     </div>
                     <div>
-                       <button class="btn btn-outline-danger"> <i class="fa-solid fa-arrow-right-long"></i></button>
+                       <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#ai-description"> <i class="fa-solid fa-arrow-right-long"></i></button>
                     </div>
                 </div>
             </div>
@@ -41,4 +41,15 @@ const displayData = aiItems => {
 
     });
 }
+
+
+
+
+
+// show button eventlistener
+document.getElementById('see-more-btn').addEventListener('click', function(){
+   
+})
+
+
 loadData();
