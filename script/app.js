@@ -83,6 +83,8 @@ const displayAiDetails = details => {
     const secondCardContainer = document.getElementById('modal-second-card');
     secondCardContainer.innerHTML = `
     <img src="${details.image_link[0] ? details.image_link[0]:details.image_link[1]}" class="card-img-top" alt="...">
+    <h5>${details.input_output_examples[0] ? details.input_output_examples[0].input:"Can you give any example?"} </h5>
+    <p>${details.input_output_examples[0] ? details.input_output_examples[0].output:"No! Not Yet! Take a break!!!"} </p>
     `
     
     console.log(details);
