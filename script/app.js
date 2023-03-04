@@ -8,11 +8,12 @@ const loadData = async (primaryData) => {
 const displayData = (aiItems, primaryData) => {
     const aiContainer = document.getElementById('ai-container');
 
-// // short by date button 
-// document.getElementById('short-by-date-btn').addEventListener('click', function(){
-//     aiItems.sort(function(a,b){return(a-b)});
 
-//     })
+
+
+
+// short by date button 
+
 
     if (primaryData === 6) {
 
@@ -158,6 +159,7 @@ console.log(details.features[1].feature_name);
         <li class="${details.features[2] ? "" : "d-none"} ">${details.features[2].feature_name}</li>
         <li class="${details.features[3] ? "" : "d-none"} ">${details.features[3].feature_name}</li>
         <li class="${details.features[4] ? "" : "d-none"} ">${details.features[4] ? details.features[4].feature_name:"" }</li>
+        <li class="${details.features[5] ? "" : "d-none"} ">${details.features[5] ? details.features[5].feature_name:"" }</li>
         `;
 
 
@@ -195,5 +197,22 @@ details.integrations ? details.integrations.forEach(integration => {
 
 
 }
+
+
+document.getElementById('short-by-date-btn').addEventListener('click', async function(){
+    const url = `https://openapi.programming-hero.com/api/ai/tools`
+    const res = await fetch(url);
+    const data = await res.json();
+    sortData(data.data.tools);
+
+    })
+
+    const sortData = data => {
+        console.log(data);
+        const sortedAllData = data.sort((a, b) => new Date(b.published_in) - new Date(a.published_in));
+        displayData(sortedAllData)
+    }
+
+
 
 loadData(6);
