@@ -145,11 +145,6 @@ const displayAiDetails = details => {
 
 
 
-//    const li = document.createElement('li');
-//    li.innerText = `${details.features.feature_name}`
-//    console.log(li)
-//    const ul = document.getElementById(`${30 + details.id}`);
-//    ul.appendChild(li);
 
 console.log(details.features[1].feature_name);
 
@@ -157,7 +152,7 @@ console.log(details.features[1].feature_name);
    
         const ulLi = document.createElement('li');
         const ul = document.getElementById(`${30 + details.id}`);
-        ulLi.innerText = `${details.features[1].feature_name}`;
+      
         ul.innerHTML = `
         <li>${details.features[1].feature_name}</li>
         <li>${details.features[2].feature_name}</li>
@@ -192,9 +187,9 @@ details.integrations ? details.integrations.forEach(integration => {
     const secondCardContainer = document.getElementById('modal-second-card');
     secondCardContainer.innerHTML = `
     <img src="${details.image_link[0] ? details.image_link[0] : details.image_link[1]}" class="card-img-top" alt="...">
-    <span class="accuracyBtn">${details.accuracy ? details.accuracy.score * 100 + "%" + " " + "accuracy": "" } </span> 
-    <h5>${details.input_output_examples[0] ? details.input_output_examples[0].input : "Can you give any example?"} </h5>
-    <p>${details.input_output_examples[0] ? details.input_output_examples[0].output : "No! Not Yet! Take a break!!!"} </p>
+    <span class="accuracyBtn">${details.accuracy.score != null ? details.accuracy.score * 100 + "%" + " " + "accuracy": ""} </span> 
+    <h5>${details.input_output_examples != null ? details.input_output_examples[0].input : "Can you give any example?"} </h5>
+    <p>${details.input_output_examples != null ? details.input_output_examples[0].output : "No! Not Yet! Take a break!!!"} </p>
     `;
 
 
