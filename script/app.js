@@ -154,9 +154,10 @@ console.log(details.features[1].feature_name);
         const ul = document.getElementById(`${30 + details.id}`);
       
         ul.innerHTML = `
-        <li>${details.features[1].feature_name}</li>
-        <li>${details.features[2].feature_name}</li>
-        <li>${details.features[3].feature_name}</li>
+        <li class="${details.features[1] ? "" : "d-none"} ">${details.features[1].feature_name}</li>
+        <li class="${details.features[2] ? "" : "d-none"} ">${details.features[2].feature_name}</li>
+        <li class="${details.features[3] ? "" : "d-none"} ">${details.features[3].feature_name}</li>
+        <li class="${details.features[4] ? "" : "d-none"} ">${details.features[4] ? details.features[4].feature_name:"" }</li>
         `;
 
 
@@ -187,7 +188,7 @@ details.integrations ? details.integrations.forEach(integration => {
     const secondCardContainer = document.getElementById('modal-second-card');
     secondCardContainer.innerHTML = `
     <img src="${details.image_link[0] ? details.image_link[0] : details.image_link[1]}" class="card-img-top" alt="...">
-    <span class="accuracyBtn">${details.accuracy.score != null ? details.accuracy.score * 100 + "%" + " " + "accuracy": ""} </span> 
+    <span class="${details.accuracy.score != null ? "accuracyBtn" : "d-none"} ">${details.accuracy.score != null ? details.accuracy.score * 100 + "%" + " " + "accuracy": ""} </span> 
     <h5>${details.input_output_examples != null ? details.input_output_examples[0].input : "Can you give any example?"} </h5>
     <p>${details.input_output_examples != null ? details.input_output_examples[0].output : "No! Not Yet! Take a break!!!"} </p>
     `;
