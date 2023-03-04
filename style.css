@@ -11,7 +11,7 @@
 
 span.accuracyBtn {
     color: white;
-    background: red;
+    background: rgb(225, 11, 11);
     max-width: 65%;
     padding: 8px;
     text-align: center;
@@ -20,4 +20,10 @@ span.accuracyBtn {
     position: absolute;
     right: -5px;
     top: 30px;
+}
+
+.crossBtn{
+    background-color: red;
+    opacity: 1;
+    border-radius: 50%;
 }

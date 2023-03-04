@@ -8,6 +8,12 @@ const loadData = async (primaryData) => {
 const displayData = (aiItems, primaryData) => {
     const aiContainer = document.getElementById('ai-container');
 
+// // short by date button 
+// document.getElementById('short-by-date-btn').addEventListener('click', function(){
+//     aiItems.sort(function(a,b){return(a-b)});
+
+//     })
+
     if (primaryData === 6) {
 
         aiItems = aiItems.slice(0, 6);
@@ -135,13 +141,29 @@ const displayAiDetails = details => {
    <ul id="${30 + details.id}"></ul>
    `;
 
+
+
+
+
+//    const li = document.createElement('li');
+//    li.innerText = `${details.features.feature_name}`
+//    console.log(li)
+//    const ul = document.getElementById(`${30 + details.id}`);
+//    ul.appendChild(li);
+
+console.log(details.features[1].feature_name);
+
     //    features li;
-    for (const feature in details.features) {
-        const li = document.createElement('li');
-        li.innerText = `${feature.feature_name}`
+   
+        const ulLi = document.createElement('li');
         const ul = document.getElementById(`${30 + details.id}`);
-        ul.appendChild(li);
-    }
+        ulLi.innerText = `${details.features[1].feature_name}`;
+        ul.innerHTML = `
+        <li>${details.features[1].feature_name}</li>
+        <li>${details.features[2].feature_name}</li>
+        <li>${details.features[3].feature_name}</li>
+        `;
+
 
 
     // modal integration 
@@ -170,7 +192,7 @@ details.integrations ? details.integrations.forEach(integration => {
     const secondCardContainer = document.getElementById('modal-second-card');
     secondCardContainer.innerHTML = `
     <img src="${details.image_link[0] ? details.image_link[0] : details.image_link[1]}" class="card-img-top" alt="...">
-    <span class="accuracyBtn">${details.accuracy ? details.accuracy.score * 100 +"%" + " " + "accuracy" :"" } </span> 
+    <span class="accuracyBtn">${details.accuracy ? details.accuracy.score * 100 + "%" + " " + "accuracy": "" } </span> 
     <h5>${details.input_output_examples[0] ? details.input_output_examples[0].input : "Can you give any example?"} </h5>
     <p>${details.input_output_examples[0] ? details.input_output_examples[0].output : "No! Not Yet! Take a break!!!"} </p>
     `;
