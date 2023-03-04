@@ -86,19 +86,8 @@ document.getElementById('see-more-btn').addEventListener('click', function () {
     // clear the previous html
     const previousHtml = document.getElementById('ai-container');
     previousHtml.innerHTML = '';
-
-
-    // start loading spinner ;
-    const loadingSpinner = document.getElementById('spinner');
-    loadingSpinner.classList.remove('d-none');
-    // view short by date button;
-    const shortByDateBtn = document.getElementById('short-by-date-btn');
-    shortByDateBtn.classList.add('d-none');
-    // view see more button;
-    const seeMoreBtn = document.getElementById('see-more-btn');
-    seeMoreBtn.classList.add('d-none');
-
-
+// show hide button and loading spinner;
+    buttonShowHide();
 
     // call the data without parameter
     loadData()
@@ -199,7 +188,26 @@ details.integrations ? details.integrations.forEach(integration => {
 }
 
 
+const buttonShowHide =() =>{
+    // start loading spinner ;
+    const loadingSpinner = document.getElementById('spinner');
+    loadingSpinner.classList.remove('d-none');
+    // view short by date button;
+    const shortByDateBtn = document.getElementById('short-by-date-btn');
+    shortByDateBtn.classList.add('d-none');
+    // view see more button;
+    const seeMoreBtn = document.getElementById('see-more-btn');
+    seeMoreBtn.classList.add('d-none');
+}
+
 document.getElementById('short-by-date-btn').addEventListener('click', async function(){
+    const previousHtml = document.getElementById('ai-container');
+    previousHtml.innerHTML = '';
+
+        
+        buttonShowHide();
+    
+
     const url = `https://openapi.programming-hero.com/api/ai/tools`
     const res = await fetch(url);
     const data = await res.json();
